@@ -50,12 +50,12 @@ Before using this project, ensure you have the following:
 Navigate to the directory where you downloaded the script and make it executable using the following command:
 
 ```bash
-chmod 755 script.sh
+chmod 755 Script.sh
 ```
 
 ### 3. Run the Script
 ```
-./script.sh
+./Script.sh
 ```
 
 
