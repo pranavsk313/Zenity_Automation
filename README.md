@@ -8,3 +8,10 @@ This Bash script provides a graphical user interface for basic system management
 
    ```bash
    git clone <repository_url>
+
+   
+2. Navigate to the directory:
+
+```bash
+cd <repository_name>
+
