@@ -44,7 +44,7 @@ Before using this project, ensure you have the following:
 
 ### 1. Clone or Download the Script
 ```bash
- git clone https://github.com/
+ git clone https://github.com/pranavsk313/Zenity_Automation/tree/main
 ```
 ### 2. Make the Script Executable
 Navigate to the directory where you downloaded the script and make it executable using the following command:
