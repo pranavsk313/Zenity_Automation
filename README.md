@@ -12,14 +12,35 @@ This Bash script provides a basic graphical interface for managing various aspec
 
 ### 1. Clone or Download the Script
 ```bash
-$ git clone https://github.com/
+ git clone https://github.com/
 ```
 ### 2. Install Zenity
 
 Make sure you have Zenity installed on your RHEL9 system. If Zenity is not already installed, you can install it using the following command:
 
 ```bash
-$ sudo yum install zenity
+ sudo yum install zenity
 ```
 ### 3. Make the Script Executable
 Navigate to the directory where you downloaded the script and make it executable using the following command:
+
+```bash
+chmod 755 script.sh
+```
+
+### 4. Run the Script
+```
+./script.sh
+```
+
+
+
+
+
+
+
+
+
+
+
+
