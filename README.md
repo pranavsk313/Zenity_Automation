@@ -34,13 +34,7 @@ Before using this project, ensure you have the following:
 4. **Root or Sudo Access**
    - You may need root or sudo access to execute certain commands depending on the tasks performed by the script.
 
-## 3. Features
-
-- **User Management:** Allows users to create or delete users with specified attributes.
-- **Firewall Configuration:** Facilitates the configuration of firewall settings including service installation, service name, and port number.
-- **Crontab Setup:** Enables users to set up scheduled tasks using cron with minute, hour, day of month, month, day of week, and command specifications.
-
-# 4. Steps
+# 3. Steps
 
 ### 1. Clone or Download the Script
 ```bash
@@ -57,10 +51,22 @@ chmod 755 Script.sh
 ```
 ./Script.sh
 ```
-## 4. Options
-**User Management:** Allows for creating and deleting users.
-**Firewall Configuration:** Configures the firewall by installing packages, adding services, and opening ports.
-**Crontab Setup:** Sets up cron jobs by specifying minute, hour, day of month, month, day of week, and the command to run.
+### 4. Options
+- **User Management:** Allows for creating and deleting users.
+
+- **Firewall Configuration:** Configures the firewall by installing packages, adding services, and opening ports.
+
+- **Crontab Setup:** Sets up cron jobs by specifying minute, hour, day of month, month, day of week, and the command to run.
+
+![1](https://github.com/pranavsk313/Zenity_Automation/assets/122976840/7757caca-450f-4aa5-9105-7d28b0748305)
+
+### Once you've selected the **User Management** option from the main menu, you'll be presented with the following choices:
+
+   1. Creating a User:
+    To create a new user, follow these steps:
+   - Choose Create user from the User Management menu.
+   - Enter the required user details such as username, UID, GID, GECOS, home directory, and shell in the provided form.
+   - Click OK to create the user.
 
 
 
