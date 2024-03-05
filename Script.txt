@@ -1,0 +1,118 @@
+#!/bin/bash
+title="Basic RHEL9 Cockpit"
+prompt="Choose your requirements"
+options=("User Management"  "Firewall Configuration" "Crontab Setup" )
+
+
+while opt=$(zenity --title="$title" --text="$prompt" --list --column="Options"  "${options[@]}"); do
+    select=""
+
+    case "$opt" in
+    "${options[0]}" ) select="User Management";;
+    "${options[1]}" ) select="Firewall Configuration";;
+    "${options[2]}" ) select="Crontab Setup";;
+
+    *) zenity --error --text="Invalid option, "OK" to exit" && exit 1;;
+        esac
+
+
+
+  # Prompt for user Creation
+
+
+role=("Create user" "Delete user")
+
+while [[ $select = "User Management" ]] ;do
+       sleep 3 | zenity --title="Loading" --text="Please wait" --progress --no-cancel --pulsate --auto-close
+      if  opt1=$(zenity --title="$title" --text="$prompt" --list  --column="options"  "${role[@]}") ;then
+               select1=""
+
+    case "$opt1" in
+    "${role[0]}" ) select1="Create user";;
+    "${role[1]}" ) select1="Delete user";;
+
+esac
+      if  [[ $select1 = "Create user" ]] ;then
+
+       user=$(zenity  --forms --text="Add user graphically" --add-entry="Username *"   --add-entry="UID *" --add-entry="GID *" --add-entry="GECOS *" --add-entry="HOME Directory *" --add-entry="Shell *")
+
+                myname1=$(echo $user | cut -d"|" -f1)
+                myname2=$(echo $user | cut -d"|" -f2)
+                myname3=$(echo $user | cut -d"|" -f3)
+                myname4=$(echo $user | cut -d"|" -f4)
+                myname5=$(echo $user | cut -d"|" -f5)
+                myname6=$(echo $user | cut -d"|" -f6)
+                myname7=$(echo $userdel | cut -d"|" -f1)
+                useradd $myname1
+                usermod -u $myname2 $myname1
+                groupmod -g $myname3 $myname1
+                usermod -c "$myname4" $myname1
+                usermod -d -m $myname5 $myname1
+                usermod -s $myname6 $myname1
+                zenity --info --text="User created successfully"
+break
+fi
+      fi
+
+#  prompt for User deletation 
+
+if [[ $select1 = "Delete user" ]]  ;then
+       sleep 3 | zenity --title="Loading" --text="Please wait" --progress --no-cancel --pulsate --auto-close
+       userdel=$(zenity --forms --text="Delete User graphically" --add-entry="Enter Username *")
+                userdel -r -f $userdel
+sleep 3 | zenity --title="Loading" --text="Deleting User Please Wait..." --progress --no-cancel --pulsate --auto-close
+break
+fi
+break
+done
+
+
+# Firewall Configuration 
+
+       if [[ $select = "Firewall Configuration" ]]  ;then
+
+       sleep 3 | zenity --title="Loading" --text="Please wait" --progress --no-cancel --pulsate --auto-close
+
+       firewall=$(zenity  --forms --text="Add firewall graphically" --add-entry="install package *" --add-entry="Type your service name *"  --add-entry="Enter Port no with /tcp *")
+                myfr=$(echo $firewall | cut -d"|" -f1)
+                myfi1=$(echo $firewall | cut -d"|" -f2)
+                myfi2=$(echo $firewall | cut -d"|" -f3)
+                yum install $myfr -y
+                firewall-cmd --permanent --add-service=$myfi1
+                firewall-cmd --permanent --add-port=$myfi2
+                firewall-cmd --complete-reload
+#sleep 3 | zenity --title="Loading" --text="Adding Firewall Please wait....." --progress --no-cancel --pulsate --auto-close
+       zenity --info --text="Firewall configured successfully."
+       break
+       fi
+
+# Crontab Setup 
+if [[ $select = "Crontab Setup" ]]  ;then
+    sleep 3 | zenity --title="Loading" --text="Please wait" --progress --no-cancel --pulsate --auto-close
+    crontab=$(zenity --forms --text="Set Crontab" --add-entry="Add minute *" --add-entry="Add Hour *" --add-entry="Add day of month *" --add-entry="Add month *" --add-entry="Add day of week" --add-entry="Add command")
+
+    # Extract crontab details
+    crontab1=$(echo $crontab | cut -d"|" -f1)
+    crontab2=$(echo $crontab | cut -d"|" -f2)
+    crontab3=$(echo $crontab | cut -d"|" -f3)
+    crontab4=$(echo $crontab | cut -d"|" -f4)
+    crontab5=$(echo $crontab | cut -d"|" -f5)
+    crontab6=$(echo $crontab | cut -d"|" -f6)
+
+    # Check if any data is entered
+    if [ -n "$crontab" ]; then
+        # Append crontab entry to root's crontab file
+        echo "$crontab1 $crontab2 $crontab3 $crontab4 $crontab5 $crontab6 /etc/crontab" >> /var/spool/cron/crontabs/root
+
+        # Restart crond service
+        systemctl restart crond
+        systemctl enable crond
+
+        zenity --info --text="Crontab set successfully."
+    else
+        zenity --error --text="No crontab data entered. Crontab setup canceled."
+    fi
+    break
+fi
+
+done > /dev/null 2>&1
