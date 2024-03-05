@@ -44,7 +44,7 @@ Before using this project, ensure you have the following:
 
 ### 1. Clone or Download the Script
 ```bash
- git clone https://github.com/pranavsk313/Zenity_Automation/tree/main
+ git clone https://github.com/pranavsk313/Zenity_Automation/
 ```
 ### 2. Make the Script Executable
 Navigate to the directory where you downloaded the script and make it executable using the following command:
@@ -57,7 +57,10 @@ chmod 755 Script.sh
 ```
 ./Script.sh
 ```
-
+## 4. Options
+**User Management:** Allows for creating and deleting users.
+**Firewall Configuration:** Configures the firewall by installing packages, adding services, and opening ports.
+**Crontab Setup:** Sets up cron jobs by specifying minute, hour, day of month, month, day of week, and the command to run.
 
 
 
