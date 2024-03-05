@@ -52,26 +52,53 @@ chmod 755 Script.sh
 ./Script.sh
 ```
 ### 4. Options
-- **User Management:** Allows for creating and deleting users.
+1. **User Management:** Allows for creating and deleting users.
 
-- **Firewall Configuration:** Configures the firewall by installing packages, adding services, and opening ports.
+2. **Firewall Configuration:** Configures the firewall by installing packages, adding services, and opening ports.
 
-- **Crontab Setup:** Sets up cron jobs by specifying minute, hour, day of month, month, day of week, and the command to run.
+3. **Crontab Setup:** Sets up cron jobs by specifying minute, hour, day of month, month, day of week, and the command to run.
 
 ![1](https://github.com/pranavsk313/Zenity_Automation/assets/122976840/7757caca-450f-4aa5-9105-7d28b0748305)
 
-### Once you've selected the **User Management** option from the main menu, you'll be presented with the following choices:
+## Option 1: **User Management** 
+   ![2](https://github.com/pranavsk313/Zenity_Automation/assets/122976840/60ac8a90-a7bd-4662-97b7-8f3fb94a9dc0)
 
-   1. Creating a User:
-    To create a new user, follow these steps:
+### 1. **Creating a User:**
+   To create a new user, follow these steps:
    - Choose Create user from the User Management menu.
    - Enter the required user details such as username, UID, GID, GECOS, home directory, and shell in the provided form.
    - Click OK to create the user.
 
+![3](https://github.com/pranavsk313/Zenity_Automation/assets/122976840/aafe8212-6603-41e8-8867-6daf88a65281)
+
+### - Output of user creation:
+![4](https://github.com/pranavsk313/Zenity_Automation/assets/122976840/510ce810-3489-4e40-b158-8876752d5962)
 
 
+### 2. **Deleting a User**
+   If you need to remove an existing user, here's what you should do:
+   - Select Delete user from the User Management menu.
+   - Enter the username of the user you want to delete.
+   - Click OK to confirm and delete the user.
+
+![9](https://github.com/pranavsk313/Zenity_Automation/assets/122976840/91959af2-6397-4704-b289-cd5d3c2d4df4)
 
 
+##  Option 2: **Firewall Configuration**
+   - Select Firewall Configuration from the main menu.
+   - Enter the package to install, service name, and port number with /tcp.
+   - Click OK to configure the firewall.
+
+![6](https://github.com/pranavsk313/Zenity_Automation/assets/122976840/654e82c6-9c4c-4846-a9ae-f5a8c7fa386d)
+
+### Output of the Firewall Configuration:
+
+![7](https://github.com/pranavsk313/Zenity_Automation/assets/122976840/341f4896-c2d3-4571-96e6-ae3ea6e671d2)
+
+## Option 3: ** Crontab Setup **
+- Select Crontab Setup from the main menu.
+Enter the minute, hour, day of month, month, day of week, and the command for the cron job.
+Click OK to set up the cron job.
 
 
 
