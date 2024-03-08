@@ -95,10 +95,15 @@ chmod 755 Script.sh
 
 ![7](https://github.com/pranavsk313/Zenity_Automation/assets/122976840/341f4896-c2d3-4571-96e6-ae3ea6e671d2)
 
-## Option 3: ** Crontab Setup **
+## Option 3: **Crontab Setup**
 - Select Crontab Setup from the main menu.
-Enter the minute, hour, day of month, month, day of week, and the command for the cron job.
-Click OK to set up the cron job.
+- Enter the minute, hour, day of month, month, day of week, and the command for the cron job.
+- Click OK to set up the cron job.
+
+
+![8](https://github.com/pranavsk313/Zenity_Automation/assets/122976840/5ef52dc6-b832-4918-b12f-fe64dacb92bb)
+
+
 
 
 
