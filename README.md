@@ -1,4 +1,4 @@
-# Basic RHEL9 Cockpit Script
+# **Project: Basic RHEL9 Cockpit Script**
 
 This Bash script provides a basic graphical interface for managing various aspects of Red Hat Enterprise Linux 9 (RHEL9) using Zenity dialogs. It allows users to perform tasks such as user management, firewall configuration, and crontab setup in a user-friendly manner.
 
